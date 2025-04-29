@@ -33,7 +33,7 @@ decide();
 // }
 
 let computerChoice = 0;
-let playerChoice = 0;
+let playerChoice;
 
 function play(n) {
     for (i=0;i<n;i++) {
