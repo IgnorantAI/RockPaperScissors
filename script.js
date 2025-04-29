@@ -7,7 +7,20 @@ const scissors = 2;
 // ScoreTracking
 let playerWin = 0;
 let computerWin = 0;
-let rounds = parseInt(prompt("How many rounds would you like to play? "));
+let rounds 
+
+function decide() {
+    rounds = parseInt(prompt("How many rounds would you like to play? "));
+    if (isNaN(rounds) || rounds <0) {
+        alert('Very funny... now write an actual number, not in letters...)
+              decide();
+    }
+    if (rounds === 0) {
+        alert('Awesome, you just lost! Now fuck off');
+              }
+}
+
+decide();
 
 // I'' have to fix this later
 // checkIfNumber(rounds);
