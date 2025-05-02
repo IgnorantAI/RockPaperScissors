@@ -1,8 +1,6 @@
 // Set rounds to play
 // Defining a value to the hand
-const rock = 0;
-const paper = 1;
-const scissors = 2;
+const choices = [rock,paper,scissors];
 
 // ScoreTracking
 let playerWin = 0;
@@ -12,7 +10,7 @@ let rounds
 function decide() {
     rounds = parseInt(prompt("How many rounds would you like to play? "));
     if (isNaN(rounds) || rounds <0) {
-        alert('Very funny... now write an actual number, not in letters...)
+        alert("Very funny... now write an actual number, not in letters...")
               decide();
     }
     if (rounds === 0) {
@@ -22,21 +20,11 @@ function decide() {
 
 decide();
 
-// I'' have to fix this later
-// checkIfNumber(rounds);
-// function checkIfNumber(n) {
-//     if ((typeof n)!= Number) {
-//         rounds = parseInt(prompt("That's not a number, pick again"))
-//         return checkIfNumber();
-//     }
-//     console.log("ok, that's a number!")
-// }
-
-let computerChoice = 0;
+let computerChoice;
 let playerChoice;
 
-function play(n) {
-    for (i=0;i<n;i++) {
+function start(rounds) {
+    for (i=0;i<rounds;i++) {
         getPlayerChoice();
         getComputerChoice();
         playRound();
@@ -49,7 +37,7 @@ function play(n) {
     if (playerWin < computerWin) {
         return console.log("You lost the game, better luck next time");
     }
-    if (playerWin > computerWin) {
+    else {
         return console.log("You got lucky");
     }
 }
@@ -61,18 +49,15 @@ function getPlayerChoice() {
     console.log(choice);
     if ((choice.toLowerCase()) === "rock") {
         console.log("You picked Rock")
-        return playerChoice = rock;
     }
     if ((choice.toLowerCase()) === "paper") {
         console.log("You picked Paper")
-        return playerChoice = paper;
     }
     if ((choice.toLowerCase()) === "scissors") {
         console.log("You picked Scissors")
-        return playerChoice = scissors;
     }
     else {
-        console.log("Are you sure you spelled that right?");
+        console.log("Are you sure you spelled that right? It's Rock, Paper or Scissors");
         return getPlayerChoice();
     }
 }
@@ -81,19 +66,16 @@ function getPlayerChoice() {
 function getComputerChoice() {
     let n = getRandomInt(3)
     if (n<1) {
-        computerChoice = rock;
+        computerChoice = 'rock';
         console.log("The pc chose Rock");
-        return computerChoice;
     }
     if (n>1) {
-        computerChoice = scissors;
+        computerChoice = 'scissors';
         console.log("The pc chose Scissors");
-        return computerChoice;
     }
     else {
-        computerChoice = paper;
+        computerChoice = 'paper';
         console.log("The pc chose Paper");
-        return computerChoice;
     }
 }
 
@@ -152,4 +134,4 @@ function getRandomInt(max) {
   }
   
 // Chose how many rounds to play
-play(rounds);
+start(rounds);
