@@ -1,6 +1,4 @@
 // Set rounds to play
-// Defining a value to the hand
-const choices = [rock,paper,scissors];
 
 // ScoreTracking
 let playerWin = 0;
@@ -45,7 +43,7 @@ function start(rounds) {
 
 // Getting Player's choice
 function getPlayerChoice() { 
-    let choice = prompt("Pick your hand: ")
+    playerChoice = prompt("Pick your hand: ")
     console.log(choice);
     if ((choice.toLowerCase()) === "rock") {
         console.log("You picked Rock")
@@ -87,27 +85,27 @@ function playRound() {
     }
 
     // if they picked Rock
-    if ((playerChoice === rock) && (computerChoice === paper)) {
+    if ((playerChoice === 'rock') && (computerChoice === paper)) {
         console.log(`you chose ${playerChoice} and the PC chose ${computerChoice}`);
         return toLose();
     }
-    if ((playerChoice === rock) && (computerChoice === scissors)) {
+    if ((playerChoice === 'rock') && (computerChoice === scissors)) {
         console.log(`you chose ${playerChoice} and the PC chose ${computerChoice}`);
         return toWin();
     }
     // if they picked Paper
-    if ((playerChoice === paper) && (computerChoice === scissors)) {
+    if ((playerChoice === 'paper') && (computerChoice === scissors)) {
         console.log(`you chose ${playerChoice} and the PC chose ${computerChoice}`);return toLose();
     }
-    if ((playerChoice === paper) && (computerChoice === rock)) {
+    if ((playerChoice === 'paper') && (computerChoice === rock)) {
         console.log(`you chose ${playerChoice} and the PC chose ${computerChoice}`);return toWin();
     }
     
     // if they picked Scissors
-    if ((playerChoice === scissors) && (computerChoice === rock)) {
+    if ((playerChoice === 'scissors') && (computerChoice === rock)) {
         console.log(`you chose ${playerChoice} and the PC chose ${computerChoice}`);return toLose();
     }
-    if ((playerChoice === scissors) && (computerChoice === paper)) {
+    if ((playerChoice === 'scissors') && (computerChoice === paper)) {
         console.log(`you chose ${playerChoice} and the PC chose ${computerChoice}`);return toWin();
     }
     
