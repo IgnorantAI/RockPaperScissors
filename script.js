@@ -40,18 +40,17 @@ function start(rounds) {
     }
 }
 
-
 // Getting Player's choice
 function getPlayerChoice() { 
     playerChoice = prompt("Pick your hand: ")
     console.log(choice);
-    if ((choice.toLowerCase()) === "rock") {
+    if ((playerChoice.toLowerCase()) === "rock") {
         console.log("You picked Rock")
     }
-    if ((choice.toLowerCase()) === "paper") {
+    if ((playerChoice.toLowerCase()) === "paper") {
         console.log("You picked Paper")
     }
-    if ((choice.toLowerCase()) === "scissors") {
+    if ((playerChoice.toLowerCase()) === "scissors") {
         console.log("You picked Scissors")
     }
     else {
